@@ -12,7 +12,7 @@
 
 <p align="justify"> I constantly seek to improve my knowledge in Data Science, Machine Learning, Statistics, and Communication, aiming to understand the best way to extract and analyze data to get valuable information. I have knowledge and experience with Python and SQL, with several courses, projects, and challenges undertaken to improve my skills with the tools.</p>
 
-**Experiências em:** Python, Power BI, SQL, Excel, Data Analysis.
+**Experiences in:** Python, Power BI, SQL, Excel, Data Analysis.
 
 **Links:**
 * [LinkedIn](https://www.linkedin.com/in/thaynanff/)
