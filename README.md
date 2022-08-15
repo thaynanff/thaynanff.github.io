@@ -1,7 +1,8 @@
 [![author](https://img.shields.io/badge/author-thaynanff-blue)](https://www.linkedin.com/in/thaynanff/) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
-
-
+<p align="center">
+  <img src="https://github.com/thaynanff/Data-Science-Projects/blob/main/bannerv2.png?raw=true" >
+</p>
 
 
 
