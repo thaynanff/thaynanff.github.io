@@ -10,7 +10,7 @@
 
 <p align="justify"> Bachelor of Business Administration with over 4 years of experience dealing with a considerable amount of data and strategic information, with solid experience working with Power BI, Excel, ETL, SAP, and project management. I develop powerful analytical dashboards and reports with key strategic company information that are used by managers and CEOs for decision-making. I have also developed reports and dashboards in previous roles that led to better control of sales, fleet, and production management, reducing costs.</p>
 
-<p align="justify"> I constantly seek to improve my knowledge in Data Science, Machine Learning, Statistics, and Communication, aiming to understand the best way to extract and analyze data to extract valuable information. I have knowledge and experience with Python and SQL, with several courses, projects, and challenges undertaken to improve my skills with the tools.</p>
+<p align="justify"> I constantly seek to improve my knowledge in Data Science, Machine Learning, Statistics, and Communication, aiming to understand the best way to extract and analyze data to get valuable information. I have knowledge and experience with Python and SQL, with several courses, projects, and challenges undertaken to improve my skills with the tools.</p>
 
 **Experiências em:** Python, Power BI, SQL, Excel, Data Analysis.
 
