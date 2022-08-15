@@ -35,15 +35,13 @@ Data Analysis using Python and Jupyter Notebook.
 |1|Titanic Machine Learning| This is a legendary competition from Kaggle, and it dives us into one of the most infamous shipwrecks in history. The challenge is to create a predictive model to find out who was more likely to survive.| [Titanic - Machine Learning from Disaster](https://www.kaggle.com/code/thaynanff/titanic-machine-learning-from-disaster-v1)|
 
 ## 2. Python
----
 
 Code challenges and projects in Python in order to practice and improve my knowledge with the language.
 
 - [Python Challenges:](https://github.com/thaynanff/Python-Challenges) challenges in CodeWars and HackerRank in various levels.
 - [Python Projects:](https://github.com/thaynanff/Projects) completed and ongoing Python projects.
 
-## 3. Power BI Dashboards
----
+## 3. Power BI Dashboards 
 
 | Report_ID | Project_Name | Description | Insights | Links |
 | -------- | -------- | -------- |-------- | -------- | 
