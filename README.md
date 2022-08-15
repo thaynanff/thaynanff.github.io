@@ -26,7 +26,7 @@
 The best way to get knowledge is by having hands-on experience. Therefore, here can be seen some of the Data Science Projects I've created and participated in during my journey toward Data Science:
 
 ## 1. Data Science and Analytics:
----
+
 Data Analysis using Python and Jupyter Notebook.
 
 | Project_ID | Project | Description | Resource Link |
