@@ -25,7 +25,21 @@
 
 The best way to get knowledge is by having hands-on experience. Therefore, here can be seen some of the Data Science Projects I've created and participated in during my journey toward Data Science:
 
-## 1. Data Science and Analytics:
+## 1. Python
+
+Code challenges and projects in Python in order to practice and improve my knowledge with the language.
+
+- [Python Challenges:](https://github.com/thaynanff/Python-Challenges) challenges in CodeWars and HackerRank in various levels.
+- [Python Projects:](https://github.com/thaynanff/Projects) completed and ongoing Python projects.
+
+## 2. Databases and SQL
+
+[This repository]([datase](https://github.com/thaynanff/Databases-and-SQL)) was created to share the projects, codes, exercises, and challenges that I developed and participated in to practice my knowledge of SQL and databases.
+
+1. Data Modeling:
+   1. [E-Commerce Model:](https://github.com/thaynanff/Databases-and-SQL/tree/main/1.%20E-Commerce-Project) an e-commerce model developed in MySQL Workbench as part of the Database Experience Bootcamp from Digital Innovation One (DIO).
+
+## 3. Data Science and Analytics:
 
 Data Analysis using Python and Jupyter Notebook.
 
@@ -34,14 +48,8 @@ Data Analysis using Python and Jupyter Notebook.
 |2| Western Australia Weather: Data Analysis | A dataset from a weather station located at Perth International Airport that monitors Western Australia. The main goal with this notebook is to get insights regarding to the climate of the place, such as rainfall patterns, average temperature over the years, months and seasons. | [Western Australia Weather: Data Analysis](https://www.kaggle.com/code/thaynanff/western-australia-weather-data-analysis/notebook)|
 |1|Titanic Machine Learning| This is a legendary competition from Kaggle, and it dives us into one of the most infamous shipwrecks in history. The challenge is to create a predictive model to find out who was more likely to survive.| [Titanic - Machine Learning from Disaster](https://www.kaggle.com/code/thaynanff/titanic-machine-learning-from-disaster-v1)|
 
-## 2. Python
 
-Code challenges and projects in Python in order to practice and improve my knowledge with the language.
-
-- [Python Challenges:](https://github.com/thaynanff/Python-Challenges) challenges in CodeWars and HackerRank in various levels.
-- [Python Projects:](https://github.com/thaynanff/Projects) completed and ongoing Python projects.
-
-## 3. Power BI Dashboards 
+## 4. Power BI Dashboards 
 
 | Report_ID | Project_Name | Description | Insights | Links |
 | -------- | -------- | -------- |-------- | -------- | 
