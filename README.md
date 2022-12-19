@@ -46,6 +46,7 @@ Data Analysis using Python and Jupyter Notebook.
 
 | Project_ID | Project | Description | Resource Link |
 | -------- | -------- | -------- |-------- |
+|3| Demographic Data Analyzer |A project to analyze demographic data using Pandas. We are given a dataset of demographic data that was extracted from the 1994 Census database and answer a series of questions. | [Demographic Data Analyzer](https://github.com/thaynanff/Data-Science-Projects/blob/main/Data%20Science%20and%20Analytics/3.%20Demographic%20Data%20Analyzer/Demographic%20Data%20Analyzer.ipynb)
 |2| Western Australia Weather: Data Analysis | A dataset from a weather station located at Perth International Airport that monitors Western Australia. The main goal with this notebook is to get insights regarding to the climate of the place, such as rainfall patterns, average temperature over the years, months and seasons. | [Western Australia Weather: Data Analysis](https://www.kaggle.com/code/thaynanff/western-australia-weather-data-analysis/notebook)|
 |1|Titanic Machine Learning| This is a legendary competition from Kaggle, and it dives us into one of the most infamous shipwrecks in history. The challenge is to create a predictive model to find out who was more likely to survive.| [Titanic - Machine Learning from Disaster](https://www.kaggle.com/code/thaynanff/titanic-machine-learning-from-disaster-v1)|
 
