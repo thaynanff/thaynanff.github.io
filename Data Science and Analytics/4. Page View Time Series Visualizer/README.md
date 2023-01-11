@@ -1,6 +1,6 @@
 # Page View Time Series Visualizer
 
-You will be working on this project with our Replit starter code.
+We will be working on this project with our Replit starter code.
 
 We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 
