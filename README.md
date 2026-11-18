@@ -19,51 +19,64 @@
 * [Kaggle](https://www.kaggle.com/thaynanff/code)
 
 ---
-# Projects
+# Case studies
 
+Problems from real jobs, rebuilt with fictional or anonymised data. Each one covers the problem, what I built, the result and the tools.
 
-The best way to get knowledge is by having hands-on experience. Therefore, here can be seen some of the Data Science Projects I've created and participated in during my journey toward Data Science:
+## 1. Split Addresses: standardising 10,000+ customer addresses
 
-## 1. Python
+**Problem.** Customer addresses for 10,000+ customers were stored in one free-text field, typed by users. The business needed them in separate fields (street number, street name, street type, suburb, state, postcode), and the source system kept the free-text field, so the split had to keep running as addresses changed.
 
-Code challenges and projects in Python to practice and improve my knowledge of the language.
+**Approach.** A Python script that picks up only the addresses changed since the last run (from the audit table), parses each one with rules and regular expressions, and matches suburb and postcode against a reference list. When there is no exact match, three fuzzy matching steps (80% similarity threshold) try again: first with the same number of words, then allowing a different number of words, then using the state. Addresses that still can't be fixed go to an error report with the reason, and every run is logged.
 
-- [Python Challenges:](https://github.com/thaynanff/Python-Challenges) challenges in CodeWars and HackerRank in various levels.
-- [Python Projects:](https://github.com/thaynanff/Projects) completed and ongoing Python projects.
+**Result.** More than 90% of addresses were split automatically, saving 130+ hours of manual work.
 
-## 2. Databases and SQL
+**Tools.** Python (pandas, regex, fuzzywuzzy), SQL Server, pyodbc.
 
-[This repository](https://github.com/thaynanff/Databases-and-SQL) was created to share the projects, codes, exercises, and challenges that I developed and participated in to practice my knowledge of SQL and databases.
+[Notebook](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/10.%20Split%20Addresses/Split%20Address%20Script.ipynb)
 
-1. Data Modeling:
-   1. [E-Commerce Model:](https://github.com/thaynanff/Databases-and-SQL/tree/main/1.%20E-Commerce%20Model) This is an e-commerce model developed in MySQL Workbench as part of the Database Experience Bootcamp from Digital Innovation One (DIO).
-   2. [Mechanical Workshop Model:](https://github.com/thaynanff/Databases-and-SQL/tree/main/2.%20Mechanical%20Workshop%20Model) A mechanical Workshop Model developed in MySQL Workbench as part of the Database Experience Bootcamp from Digital Innovation One (DIO).
+## 2. Salesforce to SQL Server sync for Tableau
 
-## 3. Data Science and Analytics:
+**Problem.** Tableau reports needed Salesforce data combined across objects, but Salesforce does not allow complex joins between objects, which made some analysis hard to build.
 
-Data Analysis using Python and Jupyter Notebook.
+**Approach.** A Python script that queries the Salesforce API, compares the result with a SQL Server table and applies the difference: inserts new records, updates changed columns and deletes records removed in Salesforce. Credentials sit in an external file, so a password change does not mean rebuilding the job. The script runs as a scheduled EXE several times a day and logs each run.
 
-| Project_ID | Project | Description | Resource Link |
-| -------- | -------- | -------- |-------- |
-|11| Stock Data Scraper | A robust stock data extraction and scoring engine built with Python. This project collects multi-year financial data for ASX-listed companies and calculates investment scores based on five key financial pillars: Growth, Profitability, Financial Strength, Cash Flow, and Valuation. It uses custom business logic to weight each metric per industry and allows long-term investment analysis. Ideal for analysts and investors. | [Stock Data Scraper](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/11.%20Stock%20Analyser/Stock%20Data%20Scrapper.ipynb) |
-|10| Split Addresses | This project was created to solve a real business problem where the company needed to split its current customer addresses column into separated fields (street name, street number, suburb, postcode, state, etc). Many challenges were faced during the development, and I explain what solution was created to solve them.| [Split Addresses](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/10.%20Split%20Addresses/Split%20Address%20Script.ipynb)| 
-|9| Salesforce API Extraction | A project created to extract data from Salesforce using its API, do incremental insert into an SQL Server database, and update existing rows in SQL based on the changes in Salesforce. This is meant to make the data available in Tableau for report purposes.| [Salesforce API Extraction](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/09.%20Salesforce%20API%20Extraction/Salesforce%20-%20Incremental%20Inserts%20and%20Updates%20-%20Calls.ipynb)|
-|8| Australian Automotive Market | A descriptive  analysis of the automotive market of Australia with the goal of finding the best car to buy that matches certain criteria. | [Australian Automotive Market](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/08.%20Australian%20Automotive%20Market/Australian%20Automotive%20Market.ipynb)|
-|7| Alderman's Analyzer | This project was created for the Observatório Social, and it's meant to collect data using Python, record it into a SQL Server and analyze it with Power BI from a website of the City Hall of Indaial on aldermen's propositions and analyze their performance throughout the year. | [Aldermen's Analyser](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/07.%20Alderman's%20Analyzer/Alderman's%20Analyzer%20-%20Python%20Web%20Scraping.ipynb)|
-|6| Medical Data Visualizer| In this project, we will visualize and make calculations from medical examination data using matplotlib, seaborn, and pandas. The dataset values were collected during medical examinations.| [Medical Data Visualizer](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/06.%20Medical%20Data%20Visualizer/Medical%20Data%20Visualizer.ipynb)|
-|5| Sea Level Predictor | We will analyze a dataset of the global average sea level change since 1880. We will use the data to predict the sea level change through the year 2050. | [Sea Level Predictor](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/05.%20Sea%20Level%20Predictor/Sea%20Level%20Predictor.ipynb)
-|4| Page View Time Series Visualizer | For this project we will visualize time series data using a line chart, bar chart, and box plots. We will use Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations will help you understand the patterns in visits and identify yearly and monthly growth. | [Page View Time Series Visualizer](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/04.%20Page%20View%20Time%20Series%20Visualizer/Page%20View%20Time%20Series%20Visualizer.ipynb) |
-|3| Demographic Data Analyzer |A project to analyze demographic data using Pandas. We are given a dataset of demographic data that was extracted from the 1994 Census database and answer a series of questions. | [Demographic Data Analyzer](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/03.%20Demographic%20Data%20Analyzer/Demographic%20Data%20Analyzer.ipynb)
-|2| Western Australia Weather: Data Analysis | A dataset from a weather station located at Perth International Airport that monitors Western Australia. The main goal with this notebook is to get insights regarding to the climate of the place, such as rainfall patterns and average temperature over the years, months and seasons. | [Western Australia Weather: Data Analysis](https://www.kaggle.com/code/thaynanff/western-australia-weather-data-analysis/notebook)|
-|1|Titanic Machine Learning| This is a legendary competition from Kaggle, and it dives us into one of the most infamous shipwrecks in history. The challenge is to create a predictive model to find out who was more likely to survive.| [Titanic - Machine Learning from Disaster](https://www.kaggle.com/code/thaynanff/titanic-machine-learning-from-disaster-v1)|
+**Result.** Salesforce data refreshed in SQL Server on a schedule, ready to be joined and reported in Tableau.
 
+**Tools.** Python (simple_salesforce, pandas), Salesforce API, SQL Server, Tableau.
 
-## 4. Power BI Dashboards 
+[Notebook](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/09.%20Salesforce%20API%20Extraction/Salesforce%20-%20Incremental%20Inserts%20and%20Updates%20-%20Calls.ipynb)
 
-| Report_ID | Project_Name | Description | Insights | Links |
-| -------- | -------- | -------- |-------- | -------- |
-|5| Stock Scoring & Financial Analysis | A complete scoring and benchmarking engine for companies listed on the ASX, based on multi-year fundamental data. It combines sector-weighted financial metrics, scoring models, conditional heatmaps, and a dynamic filtering experience to assist in long-term investment decisions. | • Scorecards by Financial Pillar (Growth, Profitability, etc.)<br>• Year-over-Year Matrix Heatmap<br>• Income, Balance Sheet, and Cash Flow Statements<br>• Valuation, Return, and Liquidity Ratios<br>• Metric Tooltips and Definitions<br>• Sector/Industry/Company Filtering | • [Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiNmVkYWRmZGMtMGY0Ny00YTVlLWFiYWMtYTc5ZWEwNzI1N2YxIiwidCI6IjcyNmE2MjA3LTUwZjYtNDlkNS1iMGQ0LTFhNGYwNmRiYjM4OSJ9) <br>•[Project Description and Files](https://github.com/thaynanff/thaynanff.github.io/tree/main/Power%20BI%20Dashboards/4.%20Investment%20Analyser) |
-|4| Alderman's Analyzer | With this project, I collected data on alderman's projects from a website of the City Hall of Indaial using Python, and created a database, which can have incremental updates and, of course, feed a Power BI dashboard. | • Number of Propositions<br>• Status of the Propositions<br>• Top Authors<br>• Subjects of the Propositions<br>• Description of the Propositions | • [Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiZDVkNGM0NTEtZmRkYi00N2FhLTkwY2YtYzIxODc5NWJjNTJjIiwidCI6IjcyNmE2MjA3LTUwZjYtNDlkNS1iMGQ0LTFhNGYwNmRiYjM4OSJ9)
-3| Fleet Management Analysis | An analysis of a Fleet's KPIs of a given company. It's a real Power BI dashboard created by me to control strategic KPIs of the Fleet where I worked, and it was translated, having all the real names and license plates being replaced by random ones in order to protect the company's integrity. | • Fuel Expenses<br>• Spend per Establishment<br>• Price per Liter, and per Km<br>• Km per Liter<br>• Distance Traveled<br>• Infraction Alerts<br>• Maintenance Expenses<br>• Maintenance Lead Time<br>• Preventive and Corrective Expenses | • [Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiYjhmYzFmNzEtNWM3Zi00MThjLTg5MDQtZTA1MTZjOTczOTY3IiwidCI6IjcyNmE2MjA3LTUwZjYtNDlkNS1iMGQ0LTFhNGYwNmRiYjM4OSJ9) |
-2 | Customers Personality Analysis | An analysis of the personality of a supposed company's customers.| • Nº customers per graduation, age range and income<br>• Nº children at home<br>• The average nº of days since last purchase<br>• Income per age range, and marital status<br>• Total Spent per age range, marital status, product, and graduation<br>• Income x total spent and average spend<br>• Total Spent per salary range |• [Kaggle's dataset page](https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis)<br>• [Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiMzNiNWIzOWItMGZhYi00MmZlLTk1MjMtZGVmMjZlNzljZTExIiwidCI6IjcyNmE2MjA3LTUwZjYtNDlkNS1iMGQ0LTFhNGYwNmRiYjM4OSJ9) |
-1 | Expenses of Brazilian Politicians | An analysis made by me about the expenses of the politicians in Brazil from 2018 to the middle of 2020 | • Spent per year<br>• Spent per parliamentarian<br>• Type of expense<br>• Spent per party<br>• Spent over the years | • [Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiNGZjNDdhMWUtNzMwZi00YzBmLThjOTgtYTU2MGE1ODg4NDg4IiwidCI6IjcyNmE2MjA3LTUwZjYtNDlkNS1iMGQ0LTFhNGYwNmRiYjM4OSJ9) |
+## 3. Fleet Management Dashboard
+
+**Problem.** A fleet of 80+ vehicles needed one place to control fuel, maintenance and cost KPIs.
+
+**Approach.** A Power BI dashboard covering fuel spend, spend per establishment, price per litre and per km, km per litre, distance travelled, infraction alerts, maintenance spend and lead time, and preventive versus corrective spend.
+
+**Result.** Used to manage the fleet, contributing to a 20% reduction in fleet costs. The public version is translated, with real names and licence plates replaced.
+
+**Tools.** Power BI.
+
+[Power BI report](https://app.powerbi.com/view?r=eyJrIjoiYjhmYzFmNzEtNWM3Zi00MThjLTg5MDQtZTA1MTZjOTczOTY3IiwidCI6IjcyNmE2MjA3LTUwZjYtNDlkNS1iMGQ0LTFhNGYwNmRiYjM4OSJ9)
+
+---
+# Other projects
+
+| Project | Description | Links |
+| --- | --- | --- |
+| Stock Data Scraper | Python engine that collects multi-year financial data for ASX-listed companies and scores them on growth, profitability, financial strength, cash flow and valuation. | [Notebook](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/11.%20Stock%20Analyser/Stock%20Data%20Scrapper.ipynb) |
+| Stock Scoring and Financial Analysis | Power BI report on top of the scraper: scorecards by pillar, year-over-year heatmap, statements and ratios. | [Power BI report](https://app.powerbi.com/view?r=eyJrIjoiNmVkYWRmZGMtMGY0Ny00YTVlLWFiYWMtYTc5ZWEwNzI1N2YxIiwidCI6IjcyNmE2MjA3LTUwZjYtNDlkNS1iMGQ0LTFhNGYwNmRiYjM4OSJ9), [files](https://github.com/thaynanff/thaynanff.github.io/tree/main/Power%20BI%20Dashboards/4.%20Investment%20Analyser) |
+| Alderman's Analyzer | Python web scraping of the Indaial City Hall website into SQL Server with incremental updates, feeding a Power BI dashboard on aldermen's propositions. | [Notebook](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/07.%20Alderman's%20Analyzer/Alderman's%20Analyzer%20-%20Python%20Web%20Scraping.ipynb), [Power BI report](https://app.powerbi.com/view?r=eyJrIjoiZDVkNGM0NTEtZmRkYi00N2FhLTkwY2YtYzIxODc5NWJjNTJjIiwidCI6IjcyNmE2MjA3LTUwZjYtNDlkNS1iMGQ0LTFhNGYwNmRiYjM4OSJ9) |
+| Australian Automotive Market | Descriptive analysis of the Australian car market to find the best car for a set of criteria. | [Notebook](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/08.%20Australian%20Automotive%20Market/Australian%20Automotive%20Market.ipynb) |
+| Expenses of Brazilian Politicians | Power BI analysis of Brazilian politicians' expenses from 2018 to mid 2020. | [Power BI report](https://app.powerbi.com/view?r=eyJrIjoiNGZjNDdhMWUtNzMwZi00YzBmLThjOTgtYTU2MGE1ODg4NDg4IiwidCI6IjcyNmE2MjA3LTUwZjYtNDlkNS1iMGQ0LTFhNGYwNmRiYjM4OSJ9) |
+| Western Australia Weather | Rainfall and temperature patterns from the Perth Airport weather station. | [Kaggle](https://www.kaggle.com/code/thaynanff/western-australia-weather-data-analysis/notebook) |
+
+---
+# Learning
+
+Courses, tutorials and practice exercises.
+
+- **Python:** [Python Challenges](https://github.com/thaynanff/Python-Challenges) (CodeWars and HackerRank), [Python Projects](https://github.com/thaynanff/Projects)
+- **SQL and data modelling:** [Databases and SQL](https://github.com/thaynanff/Databases-and-SQL) (DIO Database Experience Bootcamp: e-commerce and mechanical workshop models)
+- **freeCodeCamp data analysis:** [Medical Data Visualizer](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/06.%20Medical%20Data%20Visualizer/Medical%20Data%20Visualizer.ipynb), [Sea Level Predictor](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/05.%20Sea%20Level%20Predictor/Sea%20Level%20Predictor.ipynb), [Page View Time Series Visualizer](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/04.%20Page%20View%20Time%20Series%20Visualizer/Page%20View%20Time%20Series%20Visualizer.ipynb), [Demographic Data Analyzer](https://github.com/thaynanff/thaynanff.github.io/blob/main/Data%20Science%20and%20Analytics/03.%20Demographic%20Data%20Analyzer/Demographic%20Data%20Analyzer.ipynb)
+- **Kaggle:** [Titanic: Machine Learning from Disaster](https://www.kaggle.com/code/thaynanff/titanic-machine-learning-from-disaster-v1), [Customers Personality Analysis](https://app.powerbi.com/view?r=eyJrIjoiMzNiNWIzOWItMGZhYi00MmZlLTk1MjMtZGVmMjZlNzljZTExIiwidCI6IjcyNmE2MjA3LTUwZjYtNDlkNS1iMGQ0LTFhNGYwNmRiYjM4OSJ9) (Power BI)
